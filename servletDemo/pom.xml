@@ -17,9 +17,15 @@
     <url>http://www.example.com</url>
 
     <properties>
+        <fileupload-version>1.3.3</fileupload-version>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>${fileupload-version}</version>
+        </dependency>
     </dependencies>
 
     <build>
