@@ -58,6 +58,9 @@ public class SessionServlet extends HttpServlet {
         }
         session.setAttribute(visitCountKey,  visitCount);
 
+//        String token =(String)req.getAttribute("com.kissshot.servletDemo.servlet.token");
+//        System.out.println(token);
+
         resp.setContentType("text/html;charset=UTF-8");
         PrintWriter out = resp.getWriter();
 
