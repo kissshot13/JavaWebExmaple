@@ -45,7 +45,6 @@ public class CookieServlet extends HttpServlet {
                 + req.getParameter("url") + "\n</li>" +
                 "</ul>\n" +
                 "</body></html>");
-
     }
 
     @Override

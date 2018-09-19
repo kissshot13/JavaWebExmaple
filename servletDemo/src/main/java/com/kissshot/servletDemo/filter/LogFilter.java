@@ -7,6 +7,7 @@ public class LogFilter implements Filter {
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
+        System.out.println("过滤器初始化！");
         String site = filterConfig.getInitParameter("Site");
         System.out.println("网站名称:" +  site);
     }
@@ -27,6 +28,7 @@ public class LogFilter implements Filter {
 
     @Override
     public void destroy() {
+        System.out.println("过滤器销毁!");
         /* 在 Filter 实例被 Web 容器从服务移除之前调用 */
     }
 }
