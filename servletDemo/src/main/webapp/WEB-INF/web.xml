@@ -19,6 +19,7 @@
   <servlet>
     <servlet-name>HelloWorld</servlet-name>
     <servlet-class>com.kissshot.servletDemo.servlet.Servlet4HelloWorld</servlet-class>
+      <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>
     <servlet-name>HelloWorld</servlet-name>
@@ -103,6 +104,18 @@
     <filter-mapping>
         <filter-name>LogFilter</filter-name>
         <url-pattern>/*</url-pattern>
+        <!--
+           可以由一个带有 REQUEST 值的<dispatcher>元素，或者没有任何<dispatcher>元素来表示
+           使用表示匹配<url-pattern> 或 <servlet-name>的 Web 组件的请求分派器的 forward()调用情况下处理请求。
+可以由一个带有 FORWARD 值的<dispatcher>元素表示。
+            使用表示匹配<url-pattern> 或 <servlet-name>的 Web 组件的请求分派器的 include()调用情况下处理请求以由一个带有 INCLUDE 值的<dispatcher>元素表示
+            错误处理”指定的错误页面机制处理匹配<url-pattern>的错误资源的请求。
+可以由一个带有 ERROR 值的<dispatcher>元素表示
+使用第 10 页指定的“异步处理”中的异步上下文分派机制对 web 组件使用 dispatch 调用处理请求。
+可以由一个带有 ASYNC 值的<dispatcher>元素表示
+            可以组合
+        -->
+        <dispatcher>REQUEST</dispatcher>
     </filter-mapping>
 
     <!--   全局错误页面设置    -->
@@ -128,4 +141,11 @@
     <!--<session-config>-->
         <!--<session-timeout>2</session-timeout>-->
     <!--</session-config>-->
+
+    <!-- 按顺序找欢迎页面 -->
+    <welcome-file-list>
+        <welcome-file>login.jsp</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+        <!--<welcome-file>home.jsp</welcome-file>-->
+    </welcome-file-list>
 </web-app>
