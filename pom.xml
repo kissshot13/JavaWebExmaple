@@ -10,6 +10,7 @@
     <modules>
         <module>servletDemo</module>
         <module>MySpringMVC</module>
+        <module>RedisCache</module>
     </modules>
     <packaging>pom</packaging>
     <properties>
