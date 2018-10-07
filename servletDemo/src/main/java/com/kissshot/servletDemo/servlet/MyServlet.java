@@ -19,13 +19,13 @@ public class MyServlet extends HttpServlet {
         req.setAttribute("com.kissshot.servletDemo.servlet.token","123");
         String token =(String)req.getAttribute("com.kissshot.servletDemo.servlet.token");
         System.out.println(token);
-
         ServletContext context = req.getServletContext();
         context.setAttribute("User", "kissshot13");
         String user = (String) context.getAttribute("User");
         context.removeAttribute("User");
         HttpSession session = req.getSession();
         session.invalidate();
+
 
         PrintWriter out = resp.getWriter();
         out.write("Hi" + user);
@@ -34,5 +34,6 @@ public class MyServlet extends HttpServlet {
 //        out.close();
 //        req.getRequestDispatcher("/").forward(req,resp);
           req.getRequestDispatcher("/session").include(req,resp);
+//          resp.sendRedirect("http://www.baidu.com");
     }
 }

@@ -17,7 +17,6 @@ import java.util.concurrent.ThreadPoolExecutor;
  */
 @WebServlet(asyncSupported = true, urlPatterns = "/async",name ="AsyncServlet" )
 public class AsyncServlet extends HttpServlet {
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         long startTime = System.currentTimeMillis();
