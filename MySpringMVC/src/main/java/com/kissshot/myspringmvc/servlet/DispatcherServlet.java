@@ -35,7 +35,7 @@ public class DispatcherServlet extends HttpServlet {
         Method method =  methodMap.get(uri);
         if (method != null) {
             try {
-                method.invoke(beanMap.get("/"+path.split("/")[1]));
+                method.invoke(beanMap.get("/"+path.split("/")[0]));
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             } catch (InvocationTargetException e) {
